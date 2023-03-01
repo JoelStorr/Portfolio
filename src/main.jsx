@@ -8,7 +8,7 @@ import Experience from "./experients.component";
 import "./index.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <Canvas>
+  <Canvas shadows={true}>
     <Experience />
   </Canvas>
 );
