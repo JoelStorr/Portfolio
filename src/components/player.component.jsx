@@ -18,18 +18,26 @@ export default function Player() {
     const { forward, backward, upward, downward } = getKeys();
     const impuls = { x: 0, y: 0, z: 0 };
     const speed = 1.5 * delta;
+    //Resets Player rotation on Stop
+    playerRef.current.rotation.x = 0;
+    playerRef.current.rotation.y = 0;
+    playerRef.current.rotation.z = 0;
 
     if (forward) {
       playerRef.current.position.z += speed;
+      playerRef.current.rotation.x += Math.PI * 0.2;
     }
     if (backward) {
       playerRef.current.position.z -= speed;
+      playerRef.current.rotation.x -= Math.PI * 0.2;
     }
     if (upward) {
       playerRef.current.position.x += speed;
+      playerRef.current.rotation.z -= Math.PI * 0.2;
     }
     if (downward) {
       playerRef.current.position.x -= speed;
+      playerRef.current.rotation.z += Math.PI * 0.2;
     }
 
     //NOTE: Follow Cam
