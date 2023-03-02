@@ -7,6 +7,7 @@ import { KeyboardControls } from "@react-three/drei";
 import Experience from "./components/experients.component";
 
 import "./index.css";
+import { Perf } from "r3f-perf";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <KeyboardControls
@@ -18,6 +19,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     ]}
   >
     <Canvas shadows={true}>
+      <Perf position={"top-left"} />
       <Experience />
     </Canvas>
   </KeyboardControls>

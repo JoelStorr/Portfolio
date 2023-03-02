@@ -17,7 +17,7 @@ export default function Player() {
     //NOTE: Hook onto Keys
     const { forward, backward, upward, downward } = getKeys();
     const impuls = { x: 0, y: 0, z: 0 };
-    const speed = 1.5 * delta;
+    const speed = 3 * delta;
     //Resets Player rotation on Stop
     playerRef.current.rotation.x = 0;
     playerRef.current.rotation.y = 0;
@@ -72,16 +72,15 @@ export default function Player() {
         floatIntensity={0.5}
         floatingRange={[0, 0.3]}
       >
-        <PivotControls>
-          <mesh castShadow>
-            <boxGeometry args={[0.25, 0.25, 0.25]} />
-            <meshStandardMaterial
-              color={"orange"}
-              emissive={"orange"}
-              emissiveIntensity={5}
-            />
-          </mesh>
-        </PivotControls>
+        d{" "}
+        <mesh castShadow>
+          <boxGeometry args={[0.25, 0.25, 0.25]} />
+          <meshStandardMaterial
+            color={"orange"}
+            emissive={"orange"}
+            emissiveIntensity={4}
+          />
+        </mesh>
       </Float>
     </group>
   );

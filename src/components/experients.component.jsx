@@ -5,6 +5,7 @@ import * as THREE from "three";
 
 //NOTE: My Imports
 import Player from "./player.component";
+import { Effect } from "./effect.component";
 
 export default function Experience() {
   const lightRef = useRef();
@@ -14,12 +15,13 @@ export default function Experience() {
     <>
       //TODO: Comment for Follow Cam
       <OrbitControls />
+      <Effect />
       <ambientLight intensity={0.05} />
-      <directionalLight position={[0, 3, 5]} ref={lightRef} />
+      <directionalLight position={[0, 3, 5]} ref={lightRef} intensity={0.3} />
       <color args={["#202121"]} attach={"background"} />
       {/* NOTE: Char cube */}
       {/* TODO: Uncomment Player */}
-      {/* <Player /> */}
+      <Player />
       {/* NOTE: Processor */}
       <mesh position={[0, 0, -2]} castShadow>
         <boxGeometry args={[2, 0.8, 2]} />
@@ -30,16 +32,22 @@ export default function Experience() {
         <boxGeometry args={[50, 0.5, 50]} />
         <meshBasicMaterial color="#020b24" metalness={5} />
       </mesh>
-      <PivotControls>
-        <mesh position={[0, 0, 1]} rotation-x={-(Math.PI * 0.5)}>
-          <planeGeometry args={[1, 1]} />
-          <meshStandardMaterial
-            color={"orange"}
-            emissive={"orange"}
-            emissiveIntensity={5}
-          />
-        </mesh>
-      </PivotControls>
+      <mesh position={[0, -0.74, 4.5]} rotation-x={-(Math.PI * 0.5)}>
+        <planeGeometry args={[0.3, 15]} />
+        <meshStandardMaterial
+          color={"#07c9f0"}
+          emissive={"#07c9f0"}
+          emissiveIntensity={1}
+        />
+      </mesh>
+      <mesh position={[4.85, -0.74, 12]} rotation-x={-(Math.PI * 0.5)}>
+        <planeGeometry args={[10, 0.3]} />
+        <meshStandardMaterial
+          color={"#07c9f0"}
+          emissive={"#07c9f0"}
+          emissiveIntensity={1}
+        />
+      </mesh>
     </>
   );
 }
