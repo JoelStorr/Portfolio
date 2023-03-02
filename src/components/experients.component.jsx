@@ -12,14 +12,13 @@ export default function Experience() {
 
   return (
     <>
-      <OrbitControls />
+      //TODO: Comment for Follow Cam
+      {/* <OrbitControls /> */}
       <ambientLight intensity={0.05} />
       <directionalLight position={[0, 3, 5]} ref={lightRef} />
-
       <color args={["#202121"]} attach={"background"} />
       {/* NOTE: Char cube */}
       <Player />
-
       {/* NOTE: Processor */}
       <mesh position={[0, 0, -2]} castShadow>
         <boxGeometry args={[2, 0.8, 2]} />
