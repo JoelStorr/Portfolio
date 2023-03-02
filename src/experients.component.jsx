@@ -1,5 +1,6 @@
-import { OrbitControls, useHelper } from "@react-three/drei";
 import { useRef } from "react";
+import { OrbitControls, useHelper } from "@react-three/drei";
+
 import * as THREE from "three";
 
 export default function Experience() {
@@ -9,7 +10,7 @@ export default function Experience() {
   return (
     <>
       <OrbitControls />
-      <ambientLight intensity={0.1} />
+      <ambientLight intensity={0.05} />
       <directionalLight position={[0, 3, 5]} ref={lightRef} />
 
       <color args={["#202121"]} attach={"background"} />
