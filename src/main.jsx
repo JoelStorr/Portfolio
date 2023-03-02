@@ -11,10 +11,10 @@ import "./index.css";
 ReactDOM.createRoot(document.getElementById("root")).render(
   <KeyboardControls
     map={[
-      { mane: "forward", keys: ["ArrowRight", "KeyD"] },
-      { mane: "backward", keys: ["ArrowLeft", "KeyA"] },
-      { mane: "upward", keys: ["ArrowUp", "KeyW"] },
-      { mane: "downward", keys: ["ArrowDown", "KeyS"] },
+      { name: "forward", keys: ["ArrowRight", "KeyD"] },
+      { name: "backward", keys: ["ArrowLeft", "KeyA"] },
+      { name: "upward", keys: ["ArrowUp", "KeyW"] },
+      { name: "downward", keys: ["ArrowDown", "KeyS"] },
     ]}
   >
     <Canvas shadows={true}>
