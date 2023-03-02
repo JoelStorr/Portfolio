@@ -4,7 +4,7 @@ import ReactDOM from "react-dom/client";
 //NOTE: 3D Imports
 import { KeyboardControls } from "@react-three/drei";
 
-import Experience from "./experients.component";
+import Experience from "./components/experients.component";
 
 import "./index.css";
 

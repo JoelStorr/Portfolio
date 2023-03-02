@@ -3,6 +3,9 @@ import { OrbitControls, useHelper } from "@react-three/drei";
 
 import * as THREE from "three";
 
+//NOTE: My Imports
+import Player from "./player.component";
+
 export default function Experience() {
   const lightRef = useRef();
   useHelper(lightRef, THREE.DirectionalLightHelper, 1);
@@ -15,14 +18,8 @@ export default function Experience() {
 
       <color args={["#202121"]} attach={"background"} />
       {/* NOTE: Char cube */}
-      <mesh castShadow>
-        <boxGeometry args={[0.25, 0.25, 0.25]} />
-        <meshStandardMaterial
-          color={"orange"}
-          emissive={"orange"}
-          emissiveIntensity={5}
-        />
-      </mesh>
+      <Player />
+
       {/* NOTE: Processor */}
       <mesh position={[0, 0, -2]} castShadow>
         <boxGeometry args={[2, 0.8, 2]} />
