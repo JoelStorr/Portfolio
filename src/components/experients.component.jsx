@@ -7,7 +7,7 @@ import * as THREE from "three";
 //NOTE: My Imports
 import Player from "./player.component";
 import Floor from "./floor.component";
-import Skills from "./skills.component";
+import Skills from "./mainboard-elements/skills.component";
 import { Effect } from "./effect.component";
 
 export default function Experience() {
