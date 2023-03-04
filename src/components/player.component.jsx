@@ -3,7 +3,7 @@ import { useFrame } from "@react-three/fiber";
 import { Float, PivotControls, useKeyboardControls } from "@react-three/drei";
 import * as THREE from "three";
 
-export default function Player() {
+export default function Player({ section }) {
   //NOTE: Get Key Hooks
   const [sub, getKeys] = useKeyboardControls();
 
@@ -12,6 +12,9 @@ export default function Player() {
 
   const playerRef = useRef();
   console.log(playerRef);
+
+  //NOTE : Section State
+  const [sectionActive, setSectionActive] = useState(false);
 
   useFrame((state, delta) => {
     //NOTE: Hook onto Keys
@@ -62,6 +65,21 @@ export default function Player() {
     //Apply Cam Values
     state.camera.position.copy(cameraPosition);
     state.camera.lookAt(cameraTarget);
+
+    //console.log(playerPosition);
+
+    if (
+      (playerPosition.x >= section[0].x &&
+        playerPosition.x <= section[0].x + section[0].size) ||
+      (playerPosition.z >= section[0].z &&
+        playerPosition.z <= section[0].z + section[0].size)
+    ) {
+      console.log(" Palyer entered Sec 1");
+      setSectionActive(true);
+    } else {
+      setSectionActive(false);
+      console.log("Player left section");
+    }
   });
 
   return (

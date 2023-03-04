@@ -25,7 +25,7 @@ export default function Experience() {
       <directionalLight position={[0, 3, 5]} ref={lightRef} intensity={0.3} />
       <color args={["#202121"]} attach={"background"} />
       {/* NOTE: Char cube */}
-      {!orb && <Player />}
+      {!orb && <Player section={[{ x: 3, z: 10, size: 5 }]} />}
       {/* NOTE: Processor */}
       <mesh position={[0, 0, -2]} castShadow>
         <boxGeometry args={[2, 0.8, 2]} />

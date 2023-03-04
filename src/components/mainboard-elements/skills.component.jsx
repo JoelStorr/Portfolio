@@ -26,13 +26,7 @@ export default function Skills() {
             <meshBasicMaterial color={"blue"} />
           </mesh>
 
-          <Center
-            left
-            position={[0, -0.2, 4.8]}
-            rotation-x={-(Math.PI * 0.5)}
-            rotation-y={0}
-            rotation-z={-(Math.PI * 0.5)}
-          >
+          <Center left position={[0, 0.2, 4.8]} rotation-y={-Math.PI * 0.5}>
             <Text3D font={"./Oxygen_Regular.json"} scale={0.4} max={1}>
               HTML CSS JS
               <meshNormalMaterial />
@@ -64,10 +58,8 @@ export default function Skills() {
           <Center
             left
             bottom
-            position={[0, -0.2, 3]}
-            rotation-x={-(Math.PI * 0.5)}
-            rotation-y={0}
-            rotation-z={-(Math.PI * 0.5)}
+            position={[0, 0.2, 3]}
+            rotation-y={-Math.PI * 0.5}
           >
             <Text3D font={"./Oxygen_Regular.json"} scale={0.4} max={1}>
               React
