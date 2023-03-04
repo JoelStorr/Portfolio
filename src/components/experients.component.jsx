@@ -20,7 +20,7 @@ export default function Experience() {
     <>
       //TODO: Comment for Follow Cam
       {orb && <OrbitControls />}
-      <Effect />
+      {/* <Effect /> */}
       <ambientLight intensity={0.05} />
       <directionalLight position={[0, 3, 5]} ref={lightRef} intensity={0.3} />
       <color args={["#202121"]} attach={"background"} />
