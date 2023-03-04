@@ -18,13 +18,12 @@ export default function Experience() {
 
   return (
     <>
-      //TODO: Comment for Follow Cam
       {orb && <OrbitControls />}
-      {/* <Effect /> */}
+      {/* NOTE: Lights */}
       <ambientLight intensity={0.05} />
       <directionalLight position={[0, 3, 5]} ref={lightRef} intensity={0.3} />
       <color args={["#202121"]} attach={"background"} />
-      {/* NOTE: Char cube */}
+      {/* NOTE: Adds on and off th Player Cube */}
       {!orb && <Player section={[{ x: 3, z: 10, size: 5 }]} />}
       {/* NOTE: Processor */}
       <mesh position={[0, 0, -2]} castShadow>

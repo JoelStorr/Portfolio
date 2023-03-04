@@ -1,6 +1,29 @@
 import { Float, Text, Text3D, Center } from "@react-three/drei";
+import { useEffect } from "react";
+
+import useSection from "../../store/useSection";
 
 export default function Skills() {
+  const initAnimation = () => {
+    console.log("Ran Store Note");
+  };
+
+  //NOTE: Handeling Store Data
+  useEffect(() => {
+    const unsubScribeSetion = useSection.subscribe(
+      (state) => state.sectionOne,
+      (sectionOne) => {
+        if (sectionOne) {
+          initAnimation();
+        }
+      }
+    );
+
+    return () => {
+      unsubScribeSetion();
+    };
+  }, []);
+
   return (
     <>
       <group position={[0, -0.5, 0]}>

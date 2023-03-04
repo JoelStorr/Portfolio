@@ -1,7 +1,10 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useFrame } from "@react-three/fiber";
 import { Float, PivotControls, useKeyboardControls } from "@react-three/drei";
 import * as THREE from "three";
+
+//NOTE: Store Import
+import useSection from "../store/useSection";
 
 export default function Player({ section }) {
   //NOTE: Get Key Hooks
@@ -15,6 +18,15 @@ export default function Player({ section }) {
 
   //NOTE : Section State
   const [sectionActive, setSectionActive] = useState(false);
+  //NOTE: Section Store Hooks
+  const setSectionOne = useSection((state) => state.setSectionOne);
+  useEffect(() => {
+    if (sectionActive) {
+      setSectionOne();
+    } else {
+      setSectionOne();
+    }
+  }, [sectionActive]);
 
   useFrame((state, delta) => {
     //NOTE: Hook onto Keys
@@ -44,7 +56,6 @@ export default function Player({ section }) {
     }
 
     //NOTE: Follow Cam
-    //TODO: Uncomment if Orbit Controll is no longer needed
 
     //Get Player Position
     const playerPosition = playerRef.current.position;
