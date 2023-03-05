@@ -1,12 +1,11 @@
 import { Float, Text, Text3D, Center } from "@react-three/drei";
-import { useEffect } from "react";
+import { useFrame } from "@react-three/fiber";
+import { useEffect, useState } from "react";
 
 import useSection from "../../store/useSection";
 
 export default function Skills() {
-  const initAnimation = () => {
-    console.log("Ran Store Note");
-  };
+  const [animationActive, setAnimationActive] = useState(false);
 
   //NOTE: Handeling Store Data
   useEffect(() => {
@@ -15,7 +14,7 @@ export default function Skills() {
       (sectionOne) => {
         if (sectionOne) {
           console.log("Action in sec one", sectionOne);
-          initAnimation();
+          setAnimationActive(() => false);
         } else {
           console.log("Action outside sec one", sectionOne);
         }
@@ -26,6 +25,8 @@ export default function Skills() {
       unsubScribeSetion();
     };
   }, []);
+
+  useFrame((state, delta) => {});
 
   return (
     <>
