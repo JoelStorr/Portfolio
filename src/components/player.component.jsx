@@ -19,12 +19,14 @@ export default function Player({ section }) {
   //NOTE : Section State
   const [sectionActive, setSectionActive] = useState(false);
   //NOTE: Section Store Hooks
-  const setSectionOne = useSection((state) => state.setSectionOne);
+  const { setSectionOneActive, setSectionOneInactive } = useSection(
+    (state) => state
+  );
   useEffect(() => {
     if (sectionActive) {
-      setSectionOne();
+      setSectionOneActive();
     } else {
-      setSectionOne();
+      setSectionOneInactive();
     }
   }, [sectionActive]);
 

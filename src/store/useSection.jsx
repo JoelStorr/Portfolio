@@ -6,10 +6,15 @@ export default create(
     return {
       sectionOne: false,
 
-      setSectionOne: () => {
+      setSectionOneActive: () => {
         set((state) => {
-          console.log("Store Internal", state.sectionOne);
-          return { sectionOne: !state.sectionOne };
+          return { sectionOne: true };
+        });
+      },
+
+      setSectionOneInactive: () => {
+        set((state) => {
+          return { sectionOne: false };
         });
       },
     };

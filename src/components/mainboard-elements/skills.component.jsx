@@ -14,7 +14,10 @@ export default function Skills() {
       (state) => state.sectionOne,
       (sectionOne) => {
         if (sectionOne) {
+          console.log("Action in sec one", sectionOne);
           initAnimation();
+        } else {
+          console.log("Action outside sec one", sectionOne);
         }
       }
     );
